@@ -1,5 +1,7 @@
 #pragma once
 
+#include "TaskSystem/TaskSystem.h"
+
 #include "Application.h"
 
 // Creating an entry point:

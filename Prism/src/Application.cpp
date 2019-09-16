@@ -3,15 +3,15 @@
 
 Prism::Application::Application()
 {
-	std::cout << "Application constructed.\n";
+	PR_CORE_TRACE("Application constructed.");
 }
 
 Prism::Application::~Application()
 {
-	std::cout << "Application destructed.\n";
+	PR_CORE_TRACE("Application destructed.");
 }
 
 void Prism::Application::Run()
 {
-	std::cout << "Application running.\n";
+	PR_CORE_TRACE("Application running.");
 }

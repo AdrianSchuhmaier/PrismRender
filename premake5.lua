@@ -31,6 +31,7 @@ project "Prism"
 
 	includedirs {
 		"%{prj.name}/src",
+		"vendor/spdlog/include",
 		(os.getenv("VK_SDK_PATH") .. "/include"),
 		(os.getenv("VK_SDK_PATH") .. "/shaderc/libshader/include")
 	}
@@ -68,7 +69,8 @@ project "Sandbox"
 	}
 
 	includedirs {
-		"Prism/src"
+		"Prism/src",
+		"vendor/spdlog/include"
 	}
 
 	dependson {

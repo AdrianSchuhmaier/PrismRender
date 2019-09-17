@@ -1,4 +1,6 @@
 #pragma once
+#include "Events/Event.h"
+#include "Window/Window.h"
 
 namespace Prism {
 	class Application
@@ -8,11 +10,18 @@ namespace Prism {
 		virtual ~Application();
 
 		void Run();
+		void EventCallback(Event&);
 
-		void OnEvent();
+		virtual void OnEvent(Event&) = 0;
+		virtual void OnTick(float deltaT) = 0;
+
+	private:
+		std::unique_ptr<Window> m_Window;
+
+		float m_LastFrameTime = 0.0f;
+		bool m_Running = true;
 	};
 
-	// 
-	// Must be defined in the Client's entry point file.
+	// Must be defined in the client's entry point file.
 	Application* CreateApplication();
 }
